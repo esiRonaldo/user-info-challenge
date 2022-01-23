@@ -11,8 +11,8 @@ export function baseApi () {
 }
 
 export default {
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   getUserInfo () {
-    console.log('agha sina')
     return baseApi().get('/?results=5')
   }
 }
