@@ -13,6 +13,6 @@ export function baseApi () {
 export default {
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   getUserInfo () {
-    return baseApi().get('/?results=5')
+    return baseApi().get('/?results=25')
   }
 }

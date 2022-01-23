@@ -1,7 +1,7 @@
 <template>
   <v-card
     class="mb-3"
-    elevation="3"
+    flat
     @click="displayProfile(user)"
   >
     <v-container>
@@ -12,12 +12,12 @@
           </v-avatar>
         </v-flex>
         <v-flex>
-          <v-card-text>
+          <v-card-text class="caption">
             {{ displayUsers.fullName }}
           </v-card-text>
         </v-flex>
         <v-flex>
-          <v-card-text>
+          <v-card-text class="grey--text">
             {{ displayUsers.email }}
           </v-card-text>
         </v-flex>

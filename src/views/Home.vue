@@ -1,7 +1,7 @@
 <template>
-  <div class="main-bg mx-8 mt-8">
+  <div class="mx-8 mt-8">
     <v-layout row wrap>
-      <v-flex md6 xs12>
+      <v-flex lg6 md6 sm6 xs12>
         <v-text-field
           v-model="searchQuery"
           dense
@@ -10,13 +10,16 @@
         ></v-text-field>
         <v-layout class="mb-3" row>
           <v-btn
-            class="btn-white ml-3" @click="filterBy('allgenders')">all genders
+            class="btn-white ml-3"
+            depressed @click="filterBy('allgenders')">all genders
           </v-btn>
           <v-btn
-            class="btn-blue ml-3" @click="filterBy('female')">female
+            class="btn-blue ml-3"
+            depressed @click="filterBy('female')">female
           </v-btn>
           <v-btn
-            class="btn-blue ml-3" @click="filterBy('male')">male
+            class="btn-blue ml-3"
+            depressed @click="filterBy('male')">male
           </v-btn>
         </v-layout>
         <div
@@ -28,30 +31,36 @@
             @displayProfile="showFullsize"
           />
         </div>
-        <v-btn class="btn-white mb-3" @click="addMoreResult">More results</v-btn>
+        <v-btn class="btn-white mb-3" depressed @click="addMoreResult">More results</v-btn>
       </v-flex>
-      <v-flex v-if="isProfileClicked">
+      <v-flex v-if="isProfileClicked" class="mt-12">
         <v-card
-          class="mb-3"
-          elevation="3"
-          max-height="50"
-        >
-          <v-img :src="userPicture"></v-img>
-          <v-card-text>
-            <div class="caption black--text">ID</div>
-            <div class="grey--text">{{ userID }}</div>
-            <div class="caption black--text">Phone</div>
-            <div class="grey--text">{{ userPhone }}</div>
-            <div class="caption black--text">Email</div>
-            <div class="grey--text">{{ userEmail }}</div>
-            <div class="caption black--text">Cellphone</div>
-            <div class="grey--text">{{ userCell }}</div>
-            <div class="caption black--text">Location</div>
-            <div class="grey--text">{{ userStreetName }} - {{ userStreetNumber }}</div>
-            <div class="grey--text">{{ userPostcode }} - {{ userPhone }}</div>
-            <div class="caption black--text">Tel</div>
-            <div class="grey--text">{{ userPostcode }} - {{ userPhone }}</div>
-          </v-card-text>
+          flat
+          class="justify-center mb-3 mt-16 ml-3">
+          <v-row wrap>
+            <v-col class="d-flex" cols="7">
+              <v-img :src="userPicture" class="mx-5 ml-10" contain max-height="150"></v-img>
+              <v-card-text class="ml-5 mt-5">
+                <div class="caption black--text">ID</div>
+                <div class="grey--text">{{ userID }}</div>
+                <div class="caption black--text">Phone</div>
+                <div class="grey--text">{{ userPhone }}</div>
+                <div class="caption black--text">Email</div>
+                <div class="grey--text">{{ userEmail }}</div>
+                <div class="caption black--text">Cellphone</div>
+                <div class="grey--text">{{ userCell }}</div>
+              </v-card-text>
+            </v-col>
+            <v-col class="mt-5" cols="5">
+              <v-card-text>
+                <div class="caption black--text">Location</div>
+                <div class="grey--text">{{ userStreetName }} - {{ userStreetNumber }}</div>
+                <div class="grey--text">{{ userPostcode }} - {{ userPhone }}</div>
+                <div class="caption black--text">Tel</div>
+                <div class="grey--text">{{ userPostcode }} - {{ userPhone }}</div>
+              </v-card-text>
+            </v-col>
+          </v-row>
         </v-card>
       </v-flex>
     </v-layout>
